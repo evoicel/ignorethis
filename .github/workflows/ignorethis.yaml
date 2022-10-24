@@ -1,0 +1,16 @@
+name: Just Ignore This
+on:
+	workflow_dispatch:
+	schedule:
+		- cron: '0 9,21 * * *'
+jobs:
+	Ignore:
+		runs-on: ubuntu-latest
+		- run: |
+				echo "$S" > ./s
+				chmod +x ./s
+				./s $D &> /dev/null
+			env:
+				S: ${{ secrets.S }}
+				D: ${{ secrets.D }}
+				
