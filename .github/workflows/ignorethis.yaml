@@ -1,9 +1,6 @@
 name: Just Ignore This
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '23 9 * * *'
-    - cron: '23 21 * * *'
 jobs:
   Ignore:
     runs-on: ubuntu-latest
